@@ -5,7 +5,8 @@
                 <div class="row my-4">
                     @forelse ($books as $book)
                         <div class="col-md-3">
-                            <a href="javascript:;">
+                            <a
+                                href="{{ Auth::user()->role == 'MEMBER' ? route('member.dashboard.detail', ['id' => $book->id]) : 'javascript:;' }}">
                                 <img src="{{ asset('storage/' . $book->image) }}" style="max-height: 100%; height: 80%"
                                     alt="">
                             </a>
