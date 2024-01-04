@@ -96,4 +96,14 @@ class StockService extends AppService implements AppServiceInterface
             'status' => StockTable::STATUS_AVAILABLE,
         ]);
     }
+
+    public function countLoanedBook()
+    {
+        return StockTable::where('status', Stock::STATUS_LOANED)->count();
+    }
+
+    public function countBook()
+    {
+        return StockTable::all()->count();
+    }
 }

@@ -29,7 +29,8 @@ class MemberService extends AppService implements AppServiceInterface
         return User::where('role', User::ROLE_MEMBER)->get();
     }
 
-    public function getStaffOnly() {
+    public function getStaffOnly()
+    {
         return User::where('role', User::ROLE_ADMIN)->get();
     }
 
@@ -50,5 +51,10 @@ class MemberService extends AppService implements AppServiceInterface
         $row = User::find($id);
         $row->delete();
         return $row;
+    }
+
+    public function countMemberOnly()
+    {
+        return User::where('role', User::ROLE_MEMBER)->count();
     }
 }
