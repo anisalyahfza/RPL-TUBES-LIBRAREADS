@@ -14,13 +14,7 @@
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
-                    <li
-                        class="menu-item menu-item-submenu {{ Route::currentRouteNamed('admin.books.*') ? 'menu-item-active' : '' }}">
-                        <a href="{{ route('admin.books.index') }}" class="menu-link">
-                            <span class="menu-text">Books</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                    </li>
+                    
                     <li
                         class="menu-item menu-item-submenu {{ Route::currentRouteNamed('admin.members.*') ? 'menu-item-active' : '' }}">
                         <a href="{{ route('admin.members.index') }}" class="menu-link">
