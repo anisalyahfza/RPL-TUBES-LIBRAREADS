@@ -17,7 +17,8 @@
                             <p class="text-muted font-weight-light">Loan Code: {{ $loan->stock->code }}</p>
                             @if ($return_code)
                                 <p class="font-weight-light font-weight-bold">Give this code to admin for returning book
-                                    <br><span class="text-danger">Return Code: {{ $return_code }}</span></p>
+                                    <br><span class="text-danger">Return Code: {{ $return_code }}</span>
+                                </p>
                             @endif
                         </div>
                         <div>
@@ -70,18 +71,24 @@
                             <h5 class="text-muted my-5">Denda :<span class="text-danger font-size-lg">Rp.
                                     {{ $fine }}</span>
                             </h5>
-                            <a wire:click="returnBook" type="button"
-                                class="btn-pink btn-pill btn btn-lg btn-block font-size-h6">
-                                <i class="flaticon-coins text-white"></i>COD
-                            </a>
-                            <a wire:click="returnBook" type="button"
-                                class="btn-pink btn-pill btn btn-lg btn-block font-size-h6">
-                                <i class="flaticon-suitcase text-white"></i>Transfer Bank
-                            </a>
-                            <a wire:click="returnBook" type="button"
-                                class="btn-pink btn-pill btn btn-lg btn-block font-size-h6">
-                                <i class="flaticon2-protected text-white"></i>E-Wallet
-                            </a>
+                            @if ($fine == '0')
+                                <a wire:click="returnBook" type="button"
+                                    class="btn-pink btn-pill btn btn-lg btn-block font-size-h6"><i
+                                        class="flaticon2-protected text-white"></i>Kembalikan</a>
+                            @else
+                                <a wire:click="returnBook" type="button"
+                                    class="btn-pink btn-pill btn btn-lg btn-block font-size-h6">
+                                    <i class="flaticon-coins text-white"></i>COD
+                                </a>
+                                <a wire:click="returnBook" type="button"
+                                    class="btn-pink btn-pill btn btn-lg btn-block font-size-h6">
+                                    <i class="flaticon-suitcase text-white"></i>Transfer Bank
+                                </a>
+                                <a wire:click="returnBook" type="button"
+                                    class="btn-pink btn-pill btn btn-lg btn-block font-size-h6">
+                                    <i class="flaticon2-protected text-white"></i>E-Wallet
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>
